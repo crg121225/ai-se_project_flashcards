@@ -271,6 +271,7 @@
 .deck__link {
   position: absolute;
   inset: 0;
+  display: block;
   z-index: 1;
 }
 
