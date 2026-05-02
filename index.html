@@ -13,116 +13,82 @@
       content="study aids, flashcards, learning materials, quiz practice, revision"
     />
     <title>Flashcard Carousel</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./assets/vendor/normalize.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body class="page">
     <header class="header">
       <h1 class="header__title">
-        <a class="header__link" href="./index.html">Flash Cards</a>
+        <a class="header__link" href="#home">Flash Cards</a>
       </h1>
       <nav class="nav">
         <ul class="nav__links">
-          <li><a class="nav__link" href="./index.html">Decks</a></li>
-          <li><a class="nav__link" href="./carousel.html">Review</a></li>
+          <li><a class="nav__link" href="#home">My Decks</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
         </ul>
       </nav>
     </header>
     <main class="page__main-content">
-      <section class="decks">
+      <section class="decks" id="home">
         <h2 class="decks__title">My Decks</h2>
-        <ul class="decks__list">
-          <li class="deck deck_color_green">
-            <h3 class="deck__title">HTML Basics</h3>
-            <div class="deck__row">
-              <p class="deck__count">12 cards</p>
-              <button
-                class="deck__delete-btn"
-                type="button"
-                aria-label="Delete this deck"
-              >
-                <img src="./assets/images/delete.svg" alt="" />
-              </button>
-            </div>
-          </li>
-          <li class="deck deck_color_blue">
-            <h3 class="deck__title">CSS Layout</h3>
-            <div class="deck__row">
-              <p class="deck__count">9 cards</p>
-              <button
-                class="deck__delete-btn"
-                type="button"
-                aria-label="Delete this deck"
-              >
-                <img src="./assets/images/delete.svg" alt="" />
-              </button>
-            </div>
-          </li>
-          <li class="deck deck_color_pink">
-            <h3 class="deck__title">JavaScript Intro</h3>
-            <div class="deck__row">
-              <p class="deck__count">15 cards</p>
-              <button
-                class="deck__delete-btn"
-                type="button"
-                aria-label="Delete this deck"
-              >
-                <img src="./assets/images/delete.svg" alt="" />
-              </button>
-            </div>
-          </li>
-          <li class="deck deck_color_purple">
-            <h3 class="deck__title">Accessibility</h3>
-            <div class="deck__row">
-              <p class="deck__count">7 cards</p>
-              <button
-                class="deck__delete-btn"
-                type="button"
-                aria-label="Delete this deck"
-              >
-                <img src="./assets/images/delete.svg" alt="" />
-              </button>
-            </div>
-          </li>
-          <li class="deck deck_color_orange">
-            <h3 class="deck__title">Web APIs</h3>
-            <div class="deck__row">
-              <p class="deck__count">10 cards</p>
-              <button
-                class="deck__delete-btn"
-                type="button"
-                aria-label="Delete this deck"
-              >
-                <img src="./assets/images/delete.svg" alt="" />
-              </button>
-            </div>
-          </li>
-          <li class="deck deck_color_yellow">
-            <h3 class="deck__title">HTTP & APIs</h3>
-            <div class="deck__row">
-              <p class="deck__count">11 cards</p>
-              <button
-                class="deck__delete-btn"
-                type="button"
-                aria-label="Delete this deck"
-              >
-                <img src="./assets/images/delete.svg" alt="" />
-              </button>
-            </div>
-          </li>
-        </ul>
+        <ul class="decks__list"></ul>
         <button class="decks__new-deck-btn" type="button">+ New Deck</button>
       </section>
+      <section class="carousel" id="carousel" style="display: none;">
+        <h2 class="carousel__title"></h2>
+        <div class="carousel__card card card__carousel_color_green">
+          <p class="card__text"></p>
+          <button class="carousel__flip-btn" type="button" aria-label="Flip card">
+            <img src="./assets/images/flip.svg" alt="" />
+          </button>
+        </div>
+        <div class="carousel__controls">
+          <button class="carousel__nav-btn carousel__nav-btn_left" type="button" aria-label="Previous card">
+            <img src="./assets/images/left.svg" alt="" />
+          </button>
+          <p class="carousel__counter"></p>
+          <button class="carousel__nav-btn carousel__nav-btn_right" type="button" aria-label="Next card">
+            <img src="./assets/images/right.svg" alt="" />
+          </button>
+        </div>
+      </section>
+      <section class="not-found" id="not-found" style="display: none;">
+        <h2>404 Not Found</h2>
+        <p>The page you're looking for doesn't exist.</p>
+      </section>
+      <section class="about" id="about" style="display: none;">
+        <h2 class="about__title">About</h2>
+        <p class="about__text">
+          Flash Cards is a simple study tool for building decks and reviewing concepts with a clean, focused carousel.
+        </p>
+      </section>
     </main>
+    <template id="deck-template">
+      <li class="deck deck_color_green">
+        <a class="deck__link" href="#"></a>
+        <h3 class="deck__title"></h3>
+        <div class="deck__row">
+          <p class="deck__count"></p>
+          <button
+            class="deck__delete-btn"
+            type="button"
+            aria-label="Delete this deck"
+          >
+            <img src="./assets/images/delete.svg" alt="" />
+          </button>
+        </div>
+      </li>
+    </template>
     <footer class="footer">
       <p class="footer__text">&copy; 2026 Flash Cards</p>
     </footer>
+    <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>
