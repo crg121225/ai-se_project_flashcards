@@ -25,7 +25,8 @@ function createDeckEl(deck) {
 
   // Set the deck link href
   const linkEl = deckEl.querySelector(".deck__link");
-  linkEl.href = `#carousel/${deck.id}`;
+  const targetHash = `#carousel/${deck.id}`;
+  linkEl.href = targetHash;
 
   // Set the deck title
   const titleEl = deckEl.querySelector(".deck__title");
@@ -55,6 +56,14 @@ function createDeckEl(deck) {
   deleteBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     liEl.remove();
+  });
+
+  // Fallback navigation so clicking the card still works if layered UI blocks the anchor.
+  liEl.addEventListener("click", (e) => {
+    if (e.target.closest(".deck__delete-btn")) {
+      return;
+    }
+    window.location.hash = targetHash;
   });
 
   return deckEl;
