@@ -38,6 +38,10 @@
     <main class="page__main-content">
       <section class="decks" id="home">
         <h2 class="decks__title">My Decks</h2>
+        <p class="decks__page-color">
+          <span class="decks__page-color-swatch" aria-hidden="true"></span>
+          #ECECEC
+        </p>
         <ul class="decks__list"></ul>
         <button class="decks__new-deck-btn" type="button">+ New Deck</button>
       </section>
@@ -74,6 +78,10 @@
       <li class="deck deck_color_green">
         <a class="deck__link" href="#"></a>
         <h3 class="deck__title"></h3>
+        <p class="deck__color-label">
+          <span class="deck__color-swatch" aria-hidden="true"></span>
+          <span class="deck__color-text"></span>
+        </p>
         <div class="deck__row">
           <p class="deck__count"></p>
           <button
@@ -87,7 +95,7 @@
       </li>
     </template>
     <footer class="footer">
-      <p class="footer__text">&copy; 2026 Flash Cards</p>
+      <p class="footer__text">&copy; 2026 Your name</p>
     </footer>
     <script type="module" src="./assets/js/index.js"></script>
   </body>

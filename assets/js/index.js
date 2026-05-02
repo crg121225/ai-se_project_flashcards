@@ -44,6 +44,12 @@ function createDeckEl(deck) {
   const colorClass = colorName ? `deck_color_${colorName}` : "deck_color_green";
   liEl.className = `deck ${colorClass}`;
 
+  // Set color chip and text
+  const colorTextEl = deckEl.querySelector(".deck__color-text");
+  colorTextEl.textContent = normalizedHex.toUpperCase();
+  const colorSwatchEl = deckEl.querySelector(".deck__color-swatch");
+  colorSwatchEl.style.backgroundColor = normalizedHex;
+
   // Add delete button event listener
   const deleteBtn = deckEl.querySelector(".deck__delete-btn");
   deleteBtn.addEventListener("click", (e) => {
@@ -61,7 +67,7 @@ function createDeckEl(deck) {
  */
 function renderDeckEl(deck) {
   const deckEl = createDeckEl(deck);
-  decksList.prepend(deckEl);
+  decksList.append(deckEl);
 }
 
 /**
@@ -72,7 +78,9 @@ function router() {
 
   if (hash === "home" || hash === "") {
     // Show home view
-    homeSection.style.display = "grid";
+    homeSection.style.display = "block";
+    aboutSection.style.display = "none";
+    notFoundSection.style.display = "none";
     hideCarouselView();
   } else if (hash === "about") {
     // Show about view
