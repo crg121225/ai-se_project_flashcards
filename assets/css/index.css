@@ -1,0 +1,7 @@
+@import "../vendor/normalize.css";
+@import "./page.css";
+@import "./header.css";
+@import "./decks.css";
+@import "./deck-view.css";
+@import "./carousel.css";
+@import "./footer.css";

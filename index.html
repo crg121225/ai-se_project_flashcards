@@ -20,8 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/vendor/normalize.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body class="page">
     <header class="header">
@@ -44,6 +43,18 @@
         </p>
         <ul class="decks__list"></ul>
         <button class="decks__new-deck-btn" type="button">+ New Deck</button>
+      </section>
+      <section class="deck-view" id="deck-view" style="display: none;">
+        <div class="deck-view__header">
+          <div class="deck-view__title-row">
+            <h2 class="deck-view__title"></h2>
+            <div class="deck-view__actions">
+              <button class="deck-view__practice-btn" type="button">Practice</button>
+              <button class="deck-view__new-card-btn" type="button">+ New Card</button>
+            </div>
+          </div>
+        </div>
+        <ul class="deck-view__cards"></ul>
       </section>
       <section class="carousel" id="carousel" style="display: none;">
         <h2 class="carousel__title"></h2>
@@ -89,6 +100,19 @@
             type="button"
             aria-label="Delete this deck"
           >
+            <img src="./assets/images/delete.svg" alt="" />
+          </button>
+        </div>
+      </li>
+    </template>
+    <template id="card-template">
+      <li class="deck-card">
+        <p class="deck-card__text"></p>
+        <div class="deck-card__button-row">
+          <button class="deck-card__flip-btn" type="button" aria-label="Flip card">
+            <img src="./assets/images/flip.svg" alt="" />
+          </button>
+          <button class="deck-card__delete-btn" type="button" aria-label="Delete card">
             <img src="./assets/images/delete.svg" alt="" />
           </button>
         </div>
