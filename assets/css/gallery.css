@@ -1,0 +1,104 @@
+.gallery {
+  display: block;
+}
+
+.gallery__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.gallery__title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.gallery__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gallery__practice-btn,
+.gallery__new-card-btn {
+  border: none;
+  border-radius: 18px;
+  padding: 18px 28px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.gallery__practice-btn {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.gallery__new-card-btn {
+  position: relative;
+  width: 100%;
+  min-height: 170px;
+  margin-top: 18px;
+  max-width: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  border-radius: 18  border-radius: 18  border-radius: 18  border-radius: 18  border-radx;
+  line-height: 1.2;
+  col  col  co7f  col  col  co7fter;
+  col  col  co7f ca  col  col  co7    col  col  co7f ca  col  col .gal  col  cw-car  col  col  co7f ca  cent:   col  col   display:   col  col  co7f ca -i  col  col  c
+  g  g  g  g  g  g  g radius:  g  g  g  ckgro  g  g  g: #f3f3f3    padding:   g  g  g  g  g  giz  g  g  g  g  g  eight  g  g  g  g  : #2f2  g  g  g  g  gy_  g  gard-btn  g  g  g  g  g  g  g"";
+  width: 35px;
+  height: 35px;
+  border-radius: 9px;
+  background-col  backgrou9;
+  p  p  p  p  p  p  p  ptransform: translate(-78  p  p  p  p  p  plery__page-color {
+  margin: -58px auto 34px;
+  min-width: 170px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+                       b        dius: 12px;
+  background-col  background-col lor  background-c-size  background-c-he  background-collery__page-color::after {
+                             lat                    rig       px;
+                                                                                          p:                  3;
+                                   wi                                   wi                                   wi                                   wi                                   wi                  ;
+                                   wi                                   wi                                   wi                                   wi                                   wi      nt             :     ents;
+}
+
+@media screen and (max-width: 1023px) {
+  .gallery__title {
+    font-size: 44px;
+  }
+
+  .gallery__page-color {
+    margin-top: -28px;
+    font-size: 28px;
+  }
+
+  .gal  .gal  .g-color-swa  .gal  .gal  .g 28px;
+    height: 28px    height: 28px    hst    heightd-t    height: 28px    height: 28px    hst ));
+    height: 28px    height: 28px    hst    heightd-t    height: 28px    height: 28px    hst ));
+             wi: 6             wi: 6             wi: 6             wi: 6         
+                                                                                                                 -content: stretch;
+  }
+
+  .gallery__practice-btn,
+  .gallery__new-card-btn {
+    width: 100%;
+  }
+}

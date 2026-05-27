@@ -5,7 +5,7 @@ import { renderDeckView, hideDeckView } from "./deck-view.js";
 
 // Select template and list
 const template = document.getElementById("deck-template");
-const decksList = document.querySelector(".decks__list");
+const decksList = document.querySelector(".gallery__list");
 const homeSection = document.getElementById("home");
 const deckViewSection = document.getElementById("deck-view");
 const carouselSection = document.getElementById("carousel");
@@ -26,36 +26,36 @@ function createDeckEl(deck) {
   const deckEl = template.content.cloneNode(true);
 
   // Set the deck link href
-  const linkEl = deckEl.querySelector(".deck__link");
+  const linkEl = deckEl.querySelector(".card__link");
   const targetHash = `#deck/${deck.id}`;
   linkEl.href = targetHash;
 
   // Set the deck title
-  const titleEl = deckEl.querySelector(".deck__title");
+  const titleEl = deckEl.querySelector(".card__title");
   titleEl.textContent = deck.name || deck.title;
 
   // Set the card count
-  const countEl = deckEl.querySelector(".deck__count");
+  const countEl = deckEl.querySelector(".card__count");
   countEl.textContent = `${deck.cards.length} ${deck.cards.length === 1 ? "card" : "cards"}`;
 
   // Apply the color modifier class
-  const liEl = deckEl.querySelector(".deck");
+  const liEl = deckEl.querySelector(".card");
   const normalizedHex = deck.color?.startsWith("#")
     ? deck.color
     : stringToHex(deck.color || "green");
   const colorName = hexToString(normalizedHex);
-  const colorClass = colorName ? `deck_color_${colorName}` : "deck_color_green";
-  liEl.className = `deck ${colorClass}`;
+  const colorClass = colorName ? `card_color_${colorName}` : "card_color_green";
+  liEl.className = `card ${colorClass}`;
   liEl.dataset.deckId = deck.id;
 
   // Set color chip and text
-  const colorTextEl = deckEl.querySelector(".deck__color-text");
+  const colorTextEl = deckEl.querySelector(".card__color-text");
   colorTextEl.textContent = normalizedHex.toUpperCase();
-  const colorSwatchEl = deckEl.querySelector(".deck__color-swatch");
+  const colorSwatchEl = deckEl.querySelector(".card__color-swatch");
   colorSwatchEl.style.backgroundColor = normalizedHex;
 
   // Add delete button event listener
-  const deleteBtn = deckEl.querySelector(".deck__delete-btn");
+  const deleteBtn = deckEl.querySelector(".card__delete-btn");
   deleteBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     liEl.remove();
@@ -63,7 +63,7 @@ function createDeckEl(deck) {
 
   // Fallback navigation so clicking the card still works if layered UI blocks the anchor.
   liEl.addEventListener("click", (e) => {
-    if (e.target.closest(".deck__delete-btn")) {
+    if (e.target.closest(".card__delete-btn")) {
       return;
     }
     window.location.hash = targetHash;

@@ -35,7 +35,7 @@ function hexToString(hexValue) {
  */
 function removeColorClasses(element) {
   [...element.classList].forEach((cls) => {
-    if (cls.startsWith("deck_color_") || cls.startsWith("card__carousel_color_")) {
+    if (cls.startsWith("card_color_") || cls.startsWith("card__carousel_color_")) {
       element.classList.remove(cls);
     }
   });

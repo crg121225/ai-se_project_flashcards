@@ -1,10 +1,10 @@
 import { hexToString, stringToHex } from "./colors.js";
 
 const deckViewSection = document.getElementById("deck-view");
-const titleEl = deckViewSection.querySelector(".deck-view__title");
-const practiceBtn = deckViewSection.querySelector(".deck-view__practice-btn");
-const newCardBtn = deckViewSection.querySelector(".deck-view__new-card-btn");
-const cardsList = deckViewSection.querySelector(".deck-view__cards");
+const titleEl = deckViewSection.querySelector(".gallery__title");
+const practiceBtn = deckViewSection.querySelector(".gallery__practice-btn");
+const newCardBtn = deckViewSection.querySelector(".gallery__new-card-btn");
+const cardsList = deckViewSection.querySelector(".gallery__list");
 const cardTemplate = document.getElementById("card-template");
 
 function getCardText(card, isFlipped) {
@@ -12,12 +12,12 @@ function getCardText(card, isFlipped) {
 }
 
 function updateDeckCountInList(deck) {
-  const deckListItem = document.querySelector(`.deck[data-deck-id="${deck.id}"]`);
+  const deckListItem = document.querySelector(`.card[data-deck-id="${deck.id}"]`);
   if (!deckListItem) {
     return;
   }
 
-  const countEl = deckListItem.querySelector(".deck__count");
+  const countEl = deckListItem.querySelector(".card__count");
   if (countEl) {
     countEl.textContent = `${deck.cards.length} ${deck.cards.length === 1 ? "card" : "cards"}`;
   }
@@ -25,10 +25,10 @@ function updateDeckCountInList(deck) {
 
 function createCardEl(deck, card) {
   const cardFragment = cardTemplate.content.cloneNode(true);
-  const cardItem = cardFragment.querySelector(".deck-card");
-  const textEl = cardFragment.querySelector(".deck-card__text");
-  const flipBtn = cardFragment.querySelector(".deck-card__flip-btn");
-  const deleteBtn = cardFragment.querySelector(".deck-card__delete-btn");
+  const cardItem = cardFragment.querySelector(".card");
+  const textEl = cardFragment.querySelector(".card__text");
+  const flipBtn = cardFragment.querySelector(".card__flip-btn");
+  const deleteBtn = cardFragment.querySelector(".card__delete-btn");
 
   let isFlipped = false;
   const normalizedHex = deck.color?.startsWith("#") ? deck.color : stringToHex(deck.color || "green");
@@ -41,7 +41,7 @@ function createCardEl(deck, card) {
     event.stopPropagation();
     isFlipped = !isFlipped;
     textEl.textContent = getCardText(card, isFlipped);
-    cardItem.classList.toggle("deck-card_flipped", isFlipped);
+    cardItem.classList.toggle("card_flipped", isFlipped);
     cardItem.style.backgroundColor = isFlipped ? "#ffffff" : normalizedHex;
   });
 

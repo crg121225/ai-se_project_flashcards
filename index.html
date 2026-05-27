@@ -35,26 +35,28 @@
       </nav>
     </header>
     <main class="page__main-content">
-      <section class="decks" id="home">
-        <h2 class="decks__title">My Decks</h2>
-        <p class="decks__page-color">
-          <span class="decks__page-color-swatch" aria-hidden="true"></span>
+      <section class="gallery" id="home">
+        <h2 class="gallery__title">My Decks</h2>
+        <p class="gallery__page-color">
+          <span class="gallery__page-color-swatch" aria-hidden="true"></span>
           #ECECEC
         </p>
-        <ul class="decks__list"></ul>
-        <button class="decks__new-deck-btn" type="button">+ New Deck</button>
+        <ul class="gallery__list"></ul>
+        <button class="gallery__new-card-btn" type="button">+ New Deck</button>
       </section>
-      <section class="deck-view" id="deck-view" style="display: none;">
-        <div class="deck-view__header">
-          <div class="deck-view__title-row">
-            <h2 class="deck-view__title"></h2>
-            <div class="deck-view__actions">
-              <button class="deck-view__practice-btn" type="button">Practice</button>
-              <button class="deck-view__new-card-btn" type="button">+ New Card</button>
+      <section class="gallery" id="deck-view" style="display: none;">
+        <div class="gallery__header">
+          <div class="gallery__title-row">
+            <h2 class="gallery__title"></h2>
+            <div class="gallery__actions">
+              <button class="gallery__practice-btn" type="button">Practice</button>
             </div>
           </div>
         </div>
-        <ul class="deck-view__cards"></ul>
+        <div class="wrapping-row">
+          <ul class="gallery__list wrapping-row__display-contents"></ul>
+          <button class="gallery__new-card-btn" type="button">+ New Card</button>
+        </div>
       </section>
       <section class="carousel" id="carousel" style="display: none;">
         <h2 class="carousel__title"></h2>
@@ -86,17 +88,17 @@
       </section>
     </main>
     <template id="deck-template">
-      <li class="deck deck_color_green">
-        <a class="deck__link" href="#"></a>
-        <h3 class="deck__title"></h3>
-        <p class="deck__color-label">
-          <span class="deck__color-swatch" aria-hidden="true"></span>
-          <span class="deck__color-text"></span>
+      <li class="card card_color_green">
+        <a class="card__link" href="#"></a>
+        <h3 class="card__title"></h3>
+        <p class="card__color-label">
+          <span class="card__color-swatch" aria-hidden="true"></span>
+          <span class="card__color-text"></span>
         </p>
-        <div class="deck__row">
-          <p class="deck__count"></p>
+        <div class="card__row">
+          <p class="card__count"></p>
           <button
-            class="deck__delete-btn"
+            class="card__delete-btn"
             type="button"
             aria-label="Delete this deck"
           >
@@ -106,13 +108,13 @@
       </li>
     </template>
     <template id="card-template">
-      <li class="deck-card">
-        <p class="deck-card__text"></p>
-        <div class="deck-card__button-row">
-          <button class="deck-card__flip-btn" type="button" aria-label="Flip card">
+      <li class="card">
+        <p class="card__text"></p>
+        <div class="card__button-row">
+          <button class="card__flip-btn" type="button" aria-label="Flip card">
             <img src="./assets/images/flip.svg" alt="" />
           </button>
-          <button class="deck-card__delete-btn" type="button" aria-label="Delete card">
+          <button class="card__delete-btn" type="button" aria-label="Delete card">
             <img src="./assets/images/delete.svg" alt="" />
           </button>
         </div>
