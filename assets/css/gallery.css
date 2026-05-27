@@ -77,7 +77,7 @@
 }
 
 .gallery__page-color {
-  margin: -58px auto 34px;
+  margin: 18px auto 34px;
   min-width: 170px;
   width: fit-content;
   display: inline-flex;
@@ -102,7 +102,7 @@
   }
 
   .gallery__page-color {
-    margin-top: -28px;
+    margin-top: 18px;
     font-size: 28px;
   }
 
