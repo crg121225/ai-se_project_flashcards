@@ -36,6 +36,16 @@
   background-color: #f5d770;
 }
 
+.card_flipped {
+  background-color: #ffffff;
+}
+
+.card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .card__title {
   margin: 0;
   font-weight: 700;
@@ -48,53 +58,77 @@
 
 .card__color-label {
   margin: 0;
-  width: fit-content;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  border-rad  border-rad  border-rad  border-rad  border-rad  border-rad  border-rad  border-rad  border-rad  border-rad  border-rad  border-rad  border-rr-events: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
 }
 
-.card__color-labe.card__color-co.card__col
-  position: absolute;
-  lef  lef  lef  ltom:  lef  lef  lef  ltom:rans  lef  lef  lef  ltom:  ft: 9px  lef  lef  lef  ltom border-right:   lef  lef  lef  ltom:  lef  lef  lef  ltom:rans  lef  lef  lefrd__  lef  lef  lef  width: 3  lef  lef  lef  lx;
-  border-radius: 9px;
+.card__color-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background-color: currentColor;
 }
 
-.card_.card_.card_play: f.card_.card_.card_play: space-be.card_.card_.cardem.card_.card_.card_play: f.cto;
-                   e;
+.card__color-text {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.card__row {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  position: relative;
   z-index: 2;
 }
 
 .card__count {
   margin: 0;
-  font-w  font-w  font-w  font-w  fpx;
+  font-weight: 700;
+  font-size: 18px;
   line-height: 1.2;
   pointer-events: none;
+  color: #1a1a1a;
 }
 
-.card__delete-btn {
-  width: 30px;
-  height: 30px;
-  padding: 0;
+.card__delete-btn,
+.card__flip-btn {
   border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backgro  backgro  backgro en  backgro  y: 0.45;
-  cursor: point  cursor: point  cursove  cursor: point  c
-.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-btn.card__delete-b {
-  margin: 0;
-  font-weight: 700;
-  font-size: 24px;
-  line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-height:   line-, 255, 255, 0.82);
-  border-radius:   border-radius:   border-radius:   border-radius:   border-radius:   border-radius:   border-radius:   b cursor: pointer;
-  box-  box-  box-x 0 r  box-   / 10%);
+  cursor: pointer;
+  padding: 0;
+  min-width: 44px;
+  min-height: 44px;
+  z-index: 2;
 }
 
-.card__flip-btn:hover,
-.card__delete-btn:hover {
-  opacity: 0.94;
+.card__delete-btn {
+  width: 44px;
+}
+
+.card__flip-btn {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.card__button-row {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  z-index: 2;
 }
 
 .card__flip-btn img,
@@ -103,9 +137,21 @@
   height: 18px;
 }
 
+.card__flip-btn:hover,
+.card__delete-btn:hover {
+  opacity: 0.94;
+}
+
+.card__text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #1a1a1a;
+  z-index: 2;
+}
+
 @media screen and (max-width: 1023px) {
-  .c  .c  .c  .{
-    font-s    font-s    font-s    fco    font-s    font-s    font-s    fco    font-_cou    font-s    font-s    font-s    fco    font-s    font-width: 639px) {
   .card__button-row {
     flex-wrap: wrap;
   }
